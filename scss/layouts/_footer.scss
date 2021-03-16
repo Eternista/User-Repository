@@ -1,0 +1,42 @@
+//FOOTER
+
+.footer {
+    position: relative;
+    // z-index: 1;
+    overflow-y: hidden;
+    padding: 160px 0 40px;
+    text-align: center;
+    h2 {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: #fff;
+        border-radius: 30px;
+        font-size: 40px;
+        // max-width: 355px;
+        margin: 0 auto;
+        img {
+            width: 60px;
+            height: 60px;
+            margin-left: 30px;
+        }
+    }
+    &::before {
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-image: url('../images/VectorFooter.svg');
+        background-position: 20% 10%;
+        width: 100%;
+        min-width: 1200px;
+        height: 400px;
+    }
+    @media (max-width: 1200px) {
+        &::before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

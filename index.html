@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src="https://kit.fontawesome.com/287bffc749.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <section class="header">
+      <img src="./images/Logo.svg" alt="logo" class="logo">
+      <div class="headerContent">
+        <div>
+          <h1>Phonebook<span>App</span></h1>
+          <p class="big">Easiest way to be connected with your friends and family.</p>
+          <button class="openAdd primary">Add contact</button>
+        </div>
+      </div>
+      <div class="headerImage shape">
+        <img src="./images/image1.png" alt="friends">
+      </div>
+    </section>
+    <div id="profile"></div>
+    <section class="main">
+      <div class="about">
+        <h2>About App</h2>
+        <p>This app let you, add,edit and search users. To made this I've used, a firebase and firestore like a storage for users.
+          Javascript let me create functions to each process of this app. To style I've used basic HTML and SCSS components.
+
+        </p>
+      </div>
+      <div class="users">
+        <div class="filter">
+          <select name="fields" id="fields">
+            <option value="First_Name" class="active">First Name</option>
+            <option value="Last_Name">Last Name</option>
+            <option value="Email">Email</option>
+            <option value="Phone">Phone Number</option>
+          </select>
+          <input type="text" class="search" placeholder="Search">
+          <button class="searchBtn secondary">Search</button>
+          <i class="fas fa-undo reset"></i>
+        </div>
+        <div id="users" class="shape"></div>
+      </div>
+    </section>
+    <div id="form">
+      <div class="container">
+        <div class="container-border">
+          <h2>Add User</h2>
+          <i class="fas fa-times-circle closeAdd"></i>
+          <div class="doubleBtn">
+            <input type="text" id="firstName" placeholder="First Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+          </div>
+          <input type="text" id="email" placeholder="Email">
+          <input type="text" id="phone" placeholder="Phone Number">
+          <input type="text" id="image" placeholder="Image url">
+          <textarea name="Description" id="description" cols="40" rows="10" placeholder="Description"></textarea>
+          <button id="add" class="primary">Add User</button>
+        </div>
+      </div>
+    </div>
+    <section class="footer shape">
+    <h2>Made by <img src="./images/MyLogo.svg" alt="My Logo"></h2>
+    </section>
+  </div>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCxzYihrWx6D6HgsBKdbdaZO4GmoEZmnwA",
+    authDomain: "user-repository.firebaseapp.com",
+    projectId: "user-repository",
+    storageBucket: "user-repository.appspot.com",
+    messagingSenderId: "524557902611",
+    appId: "1:524557902611:web:5d89e63a93ea76d27530e6"
+  };
+  // Initialize Firebase
+  var app = firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore(app);
+  db.settings({ timestampsInSnapshots: true});
+</script>
+<script src="./js/getUser.js"></script>
+<script src="./js/addUser.js"></script>
+<script src="./js/searchUser.js"></script>
+<!-- <script src="app.js"></script> -->
+</body>
+</html>

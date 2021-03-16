@@ -1,0 +1,85 @@
+//BASIC
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    color: $color-secondary;
+    text-decoration: none;
+}
+
+.none {
+    display: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow: hidden;
+    .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+//TEXT
+
+
+h1 {
+    font-size: 62px;
+    span {
+        color: $color-primary;
+    }
+}
+h2 {
+    font-size: 50px;
+}
+
+h1,h2,h3 {
+    font-weight: 700;
+    line-height: 1;
+}
+
+p {
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 1px;
+    &.big {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 48px;
+    }
+    p.big {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 380px) {
+    h1 {
+        font-size: 38px;
+    }
+    p.big {
+        font-size: 21px;
+    }
+}
+
+
+//SHAPE
+
+.shape {
+    &::before {
+        opacity: 0.2;
+        content: "";
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+    }
+}
