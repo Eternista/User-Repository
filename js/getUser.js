@@ -55,7 +55,7 @@ const getUsers = () => {
             //VIEW  SINGLE USER
 
             view.addEventListener('click', () => {
-                view.parentElement.parentElement.parentElement.classList.add('viewElement');
+                view.closest(".profil").classList.add('viewElement');
                 profile.classList.add('activeProfile');
                 profile.setAttribute('data-id', doc.id);
                 profile.innerHTML =
@@ -68,18 +68,18 @@ const getUsers = () => {
                     </div>
                 </div>
                 `;
-                profile.children[0].children[1].children[1].appendChild(firstName);
-                profile.children[0].children[1].children[1].appendChild(lastName);
-                profile.children[0].children[1].children[1].appendChild(email);
-                profile.children[0].children[1].children[1].appendChild(phone);
-                profile.children[0].children[1].children[1].appendChild(description);
+                profile.getElementsByClassName("space")[0].appendChild(firstName);
+                profile.getElementsByClassName("space")[0].appendChild(lastName);
+                profile.getElementsByClassName("space")[0].appendChild(email);
+                profile.getElementsByClassName("space")[0].appendChild(phone);
+                profile.getElementsByClassName("space")[0].appendChild(description);
                 profile.children[0].appendChild(close);
                 profile.children[0].appendChild(cross);
                 profile.children[0].appendChild(removeModal);
                 let startEdit = document.createElement('button');
                 startEdit.classList.add('editBtn');
                 startEdit.textContent = 'Edit';
-                profile.children[0].children[1].appendChild(startEdit);
+                profile.getElementsByClassName("profileContent")[0].appendChild(startEdit);
                 const single = [... document.querySelectorAll('.single .fa-edit')];
                 single.forEach((e) => {
                     e.classList.add('none');

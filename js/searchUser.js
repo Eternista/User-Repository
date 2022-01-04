@@ -70,7 +70,7 @@ const search = () => {
             cont.innerHTML = `
                 <a class='phone' href="tel:${doc.data().Phone_Number}"><img src="./images/phone.svg"> Call</a>
                 <a class='email' href="mailto:${doc.data().Email}"><img src="./images/email.svg"> Email</a>
-                `
+                `;
             cont.appendChild(view);
             info.appendChild(name);
             info.appendChild(cont);
